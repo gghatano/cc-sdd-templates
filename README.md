@@ -23,6 +23,7 @@
 | `/arch` | 設計 | ❌ なし |
 | `/eng` | 実装 | ✅ あり |
 | `/rev` | レビュー | ❌ なし |
+| `/knowledge` | 知見の追加・管理 | ❌ なし |
 
 ---
 
@@ -273,6 +274,40 @@ git push origin main
 
 ---
 
+## ナレッジ管理
+
+プロジェクトで得た知見を適切に記録・管理します。
+
+### クイックスタート
+
+```bash
+# プロジェクト固有の技術知見を追加
+/knowledge project 認証トークンの有効期限はアクセス1時間、リフレッシュ7日
+
+# 実装関連の知見を追加
+/knowledge skill:eng Pythonのasync関数では必ずawaitを使用する
+
+# 全体ルールを追加
+/knowledge rule コミット前に必ずlintを実行する
+```
+
+### 知見の配置先（概要）
+
+| 知見の種類 | 配置先 |
+|-----------|--------|
+| プロジェクト固有の技術 | `doc/project_knowledge.md` |
+| 役割固有の知識 | `.claude/skills/*/*.md` |
+| 全体ルール | `CLAUDE.md` |
+
+**詳細**: [KNOWLEDGE_GUIDE.md](./KNOWLEDGE_GUIDE.md) を参照
+
+### 定期レビュー（月1回）
+
+1. `doc/project_knowledge.md` の内容を確認・整理
+2. SKILL.mdが肥大化していないか確認（目安: 80行以下）
+
+---
+
 ## 並行開発
 
 複数の機能を同時に開発する場合：
@@ -425,6 +460,10 @@ project/
 ### 開発プロセス
 - [開発方針とタスク管理](./doc/開発方針.md)
 - [Worktreeワークフロー](./doc/worktree-workflow.md)
+
+### ナレッジ管理
+- [知見配置ガイド](./KNOWLEDGE_GUIDE.md) - 何をどこに書くか
+- [プロジェクト知見](./doc/project_knowledge.md) - プロジェクト固有の技術知見
 
 ### 仕様・設計
 - [システム仕様書](./doc/仕様書.md)
