@@ -17,6 +17,7 @@ Claude Code Software Development Driver (CCSDD) テンプレート。スラッ�
 | `/arch` | タスク分割・詳細設計 | ❌ | `.claude/commands/arch.md` |
 | `/eng` | **実装の実行** | ✅ | `.claude/commands/eng.md` |
 | `/rev` | コードレビュー | ❌ | `.claude/commands/rev.md` |
+| `/knowledge` | 知見の追加・管理 | ❌ | `.claude/commands/knowledge.md` |
 
 **実装が必要な場合は必ず `/eng` を使用する。**
 
@@ -230,7 +231,9 @@ Claude Codeに依頼する際、必要なコンテキストを明示的に提供
 
 - `doc/仕様書.md` - システム仕様（実装時に必ず参照）
 - `doc/開発方針.md` - フェーズ別タスク計画
+- `doc/project_knowledge.md` - プロジェクト固有の技術知見
 - `doc/worktree-workflow.md` - Worktree開発フロー詳細
+- `KNOWLEDGE_GUIDE.md` - 知見の配置ガイド
 
 ## コーディング規約
 
@@ -278,6 +281,7 @@ Claude Codeに依頼する際、必要なコンテキストを明示的に提供
 doc/
 ├── 仕様書.md           # システム仕様
 ├── 開発方針.md         # タスク一覧・進捗管理
+├── project_knowledge.md # プロジェクト固有の技術知見
 ├── tasks/              # タスク別設計書
 └── diagrams/           # 図表
 
